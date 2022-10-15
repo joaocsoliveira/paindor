@@ -1,0 +1,39 @@
+filegroup(
+    name = "PaindorPublicHeaders",
+    srcs = glob([
+        "include/Paindor.hpp",
+    ]),
+    visibility = [
+        "//examples:__pkg__",
+    ]
+)
+
+cc_library(
+    name = "Paindor",
+    srcs = [
+        "src/Paindor.cpp",
+    ],
+    hdrs = [
+        ":PaindorPublicHeaders"
+    ],
+    includes = ["./include"],
+    visibility = [
+        "//examples:__pkg__",
+    ]
+)
+
+cc_test(
+    name = "Paindor_test",
+    size = "small",
+    srcs = [
+        "test/Paindor_init_test.cpp",
+        ":PaindorPublicHeaders",
+    ],
+    copts = [
+        "-Iinclude"
+    ],
+    deps = [
+        ":Paindor",
+        "@com_google_googletest//:gtest_main",
+    ],
+)

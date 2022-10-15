@@ -1,0 +1,9 @@
+cc_binary(
+    name = "example-001",
+    srcs = [
+        "001_HelloWorld/main.cpp",
+    ],
+    deps = [
+        "//core:Paindor",
+    ],
+)
