@@ -8,7 +8,7 @@ namespace Paindor {
         CoreLog::core_success("Paindor::Application::start\n");
     }
 
-    void Application::run() {
+    void Application::run() const {
         CoreLog::core_info("Paindor::Application::run\n");
     }
 }

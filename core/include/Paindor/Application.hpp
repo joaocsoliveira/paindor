@@ -6,7 +6,7 @@ namespace Paindor {
     class Application {
     public:
         Application();
-        void run();
+        void run() const;
     };
 
 }
