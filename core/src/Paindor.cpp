@@ -4,6 +4,6 @@ void Paindor::init() {
     text = "Hello World!";
 }
 
-std::string Paindor::getText() {
+std::string Paindor::getText() const {
     return text;
 }
