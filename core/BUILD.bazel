@@ -14,13 +14,18 @@ cc_library(
         "src/*.cpp",
     ]),
     hdrs = [
-        ":PaindorHeaders"
+        ":PaindorHeaders",
+        "private_include/Paindor/CoreLog.hpp",
     ],
     includes = [
-        "./include"
+        "./include",
+        "./private_include",
     ],
     visibility = [
         "//examples:__pkg__",
+    ],
+    deps = [
+        "@boost//:log",
     ]
 )
 

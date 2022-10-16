@@ -9,6 +9,7 @@ http_archive(
   strip_prefix = "googletest-release-1.12.1",
 )
 
+
 # Hedron's Compile Commands Extractor for Bazel
 # https://github.com/hedronvision/bazel-compile-commands-extractor
 http_archive(
@@ -22,3 +23,16 @@ http_archive(
 )
 load("@hedron_compile_commands//:workspace_setup.bzl", "hedron_compile_commands_setup")
 hedron_compile_commands_setup()
+
+
+_RULES_BOOST_COMMIT = "ce6bd1a54c9527ffee7d0a87e97a2bdd50162ac2"
+http_archive(
+    name = "com_github_nelhage_rules_boost",
+    sha256 = "781c5413ce5d5ae8e0f90e524dc712e0ccc329bf4d5dc5850d883e64db8eff9b",
+    strip_prefix = "rules_boost-%s" % _RULES_BOOST_COMMIT,
+    urls = [
+        "https://github.com/nelhage/rules_boost/archive/%s.tar.gz" % _RULES_BOOST_COMMIT,
+    ],
+)
+load("@com_github_nelhage_rules_boost//:boost/boost.bzl", "boost_deps")
+boost_deps()
