@@ -1,7 +1,7 @@
 filegroup(
-    name = "PaindorPublicHeaders",
+    name = "PaindorHeaders",
     srcs = glob([
-        "include/Paindor.hpp",
+        "include/Paindor/*",
     ]),
     visibility = [
         "//examples:__pkg__",
@@ -10,13 +10,15 @@ filegroup(
 
 cc_library(
     name = "Paindor",
-    srcs = [
-        "src/Paindor.cpp",
-    ],
+    srcs = glob([
+        "src/*.cpp",
+    ]),
     hdrs = [
-        ":PaindorPublicHeaders"
+        ":PaindorHeaders"
     ],
-    includes = ["./include"],
+    includes = [
+        "./include"
+    ],
     visibility = [
         "//examples:__pkg__",
     ]
@@ -26,11 +28,7 @@ cc_test(
     name = "Paindor_test",
     size = "small",
     srcs = [
-        "test/Paindor_init_test.cpp",
-        ":PaindorPublicHeaders",
-    ],
-    copts = [
-        "-Iinclude"
+        "test/Application_run_test.cpp",
     ],
     deps = [
         ":Paindor",
