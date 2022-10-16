@@ -5,31 +5,31 @@
 namespace Paindor {
 
     void CoreLog::real_trace(const std::string msg) {
-        BOOST_LOG_TRIVIAL(info) << "\e[1;2m" << msg << "\e[0m";
+        BOOST_LOG_TRIVIAL(info) << "\033[1;2m" << msg << "\033[0m";
     }
 
     void CoreLog::real_debug(const std::string msg) {
-        BOOST_LOG_TRIVIAL(info) << "\e[1;30m" << msg << "\e[0m";
+        BOOST_LOG_TRIVIAL(info) << "\033[1;30m" << msg << "\033[0m";
     }
 
     void CoreLog::real_success(const std::string msg) {
-        BOOST_LOG_TRIVIAL(info) << "\e[1;32m" << msg << "\e[0m";
+        BOOST_LOG_TRIVIAL(info) << "\033[1;32m" << msg << "\033[0m";
     }
 
     void CoreLog::real_info(const std::string msg) {
-        BOOST_LOG_TRIVIAL(info) << "\e[1;34m" << msg << "\e[0m";
+        BOOST_LOG_TRIVIAL(info) << "\033[1;34m" << msg << "\033[0m";
     }
 
     void CoreLog::real_warning(const std::string msg) {
-        BOOST_LOG_TRIVIAL(info) << "\e[1;33m" << msg << "\e[0m";
+        BOOST_LOG_TRIVIAL(info) << "\033[1;33m" << msg << "\033[0m";
     }
 
     void CoreLog::real_error(const std::string msg) {
-        BOOST_LOG_TRIVIAL(info) << "\e[1;31m" << msg << "\e[0m";
+        BOOST_LOG_TRIVIAL(info) << "\033[1;31m" << msg << "\033[0m";
     }
 
     void CoreLog::real_fatal(const std::string msg) {
-        BOOST_LOG_TRIVIAL(info) << "\e[1;7m" << msg << "\e[0m";
+        BOOST_LOG_TRIVIAL(info) << "\033[1;7m" << msg << "\033[0m";
     }
 
     void CoreLog::core_trace(const std::string msg) {
