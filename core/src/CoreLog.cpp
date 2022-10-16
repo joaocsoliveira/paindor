@@ -1,4 +1,4 @@
-#include <Paindor/CoreLog.hpp>
+#include "core/private_include/Paindor/CoreLog.hpp"
 
 #include <boost/log/trivial.hpp>
 
@@ -35,31 +35,31 @@ namespace Paindor {
         BOOST_LOG_TRIVIAL(info) << "\033[1;7m [" << source << "] " << msg << "\033[0m";
     }
 
-    void CoreLog::core_trace(const std::string &msg) {
+    void CoreLog::trace(const std::string &msg) {
         real_trace(CORE_SOURCE, msg);
     }
 
-    void CoreLog::core_debug(const std::string &msg) {
+    void CoreLog::debug(const std::string &msg) {
         real_debug(CORE_SOURCE, msg);
     }
 
-    void CoreLog::core_success(const std::string &msg) {
+    void CoreLog::success(const std::string &msg) {
         real_success(CORE_SOURCE, msg);
     }
 
-    void CoreLog::core_info(const std::string &msg) {
+    void CoreLog::info(const std::string &msg) {
         real_info(CORE_SOURCE, msg);
     }
 
-    void CoreLog::core_warning(const std::string &msg) {
+    void CoreLog::warning(const std::string &msg) {
         real_warning(CORE_SOURCE, msg);
     }
 
-    void CoreLog::core_error(const std::string &msg) {
+    void CoreLog::error(const std::string &msg) {
         real_error(CORE_SOURCE, msg);
     }
 
-    void CoreLog::core_fatal(const std::string &msg) {
+    void CoreLog::fatal(const std::string &msg) {
         real_fatal(CORE_SOURCE, msg);
     }
 }

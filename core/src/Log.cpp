@@ -1,5 +1,5 @@
 #include <Paindor/Log.hpp>
-#include <Paindor/CoreLog.hpp>
+#include "core/private_include/Paindor/CoreLog.hpp"
 
 #include <boost/log/trivial.hpp>
 

@@ -32,3 +32,10 @@ bazel run //examples:example-001
 ```bash
 bazel run @hedron_compile_commands//:refresh_all
 ```
+
+### Coverage Report
+
+```bash
+bazel coverage --combined_report=lcov //...
+genhtml --output genhtml "$(bazel info output_path)/_coverage/_coverage_report.dat"
+```

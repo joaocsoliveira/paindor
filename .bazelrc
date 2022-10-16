@@ -1,3 +1,4 @@
-build --action_env=CCXX=clang
+build --action_env=CXX=clang++
 build --cxxopt -std=c++17
 build --cxxopt -g --strip=never
+build --verbose_failures

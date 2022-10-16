@@ -12,14 +12,16 @@ cc_library(
     name = "Paindor",
     srcs = glob([
         "src/*.cpp",
+        "private_include/Paindor/*.hpp",
     ]),
     hdrs = [
         ":PaindorHeaders",
-        "private_include/Paindor/CoreLog.hpp",
     ],
     includes = [
         "./include",
-        "./private_include",
+    ],
+    copts = [
+        #"-v",
     ],
     visibility = [
         "//examples:__pkg__",
@@ -32,8 +34,12 @@ cc_library(
 cc_test(
     name = "Paindor_test",
     size = "small",
-    srcs = [
-        "test/Application_run_test.cpp",
+    srcs = glob([
+        "test/*.cpp",
+        "private_include/Paindor/*.hpp",
+    ]),
+    copts = [
+        #"-v",
     ],
     deps = [
         ":Paindor",
