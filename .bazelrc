@@ -2,3 +2,5 @@ build --action_env=CXX=clang++
 build --cxxopt -std=c++17
 build --cxxopt -g --strip=never
 build --verbose_failures
+build --action_env=CC=clang
+build --copt -g --strip=never
