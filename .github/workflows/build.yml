@@ -50,7 +50,7 @@ jobs:
           build-wrapper-linux-x86-64 --out-dir ${{ env.BUILD_WRAPPER_OUT_DIR }} bazel --batch build --spawn_strategy=local --strategy=Genrule=local //...
       - name: Run converage report tool
         run: |
-          bazel coverage --combined_report=lcov  --spawn_strategy=local --strategy=Genrule=local --strategy=CoverageReport=local //...
+          bazel test //... --collect_code_coverage --combined_report=lcov --coverage_report_generator=@bazel_sonarqube//:sonarqube_coverage_generator
       - name: Run sonar-scanner
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
