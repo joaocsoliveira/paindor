@@ -36,14 +36,3 @@ http_archive(
 )
 load("@com_github_nelhage_rules_boost//:boost/boost.bzl", "boost_deps")
 boost_deps()
-
-
-http_archive (
-    name = "bazel_sonarqube",
-    url = "https://github.com/Zetten/bazel-sonarqube/archive/37261de24f80b661bbc4726e3382ef43e9d66a6e.tar.gz",
-    sha256 = "29b58763b6203cfb722fbb39d70d382a29a5f34ec827bd6cbbe2df7ccb370d9d",
-    strip_prefix = "bazel-sonarqube-37261de24f80b661bbc4726e3382ef43e9d66a6e",
-)
-load("@bazel_sonarqube//:repositories.bzl", "bazel_sonarqube_repositories")
-
-bazel_sonarqube_repositories()

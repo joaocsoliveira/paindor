@@ -8,3 +8,4 @@
 # Ignore the directory in which `clangd` stores its local index.
 /.cache/
 /genhtml
+/coverage-reports
