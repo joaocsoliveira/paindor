@@ -36,8 +36,8 @@ bazel run @hedron_compile_commands//:refresh_all
 ### Coverage Report
 
 ```bash
-bazel coverage --combined_report=lcov  //core:...
-genhtml --output genhtml "$(bazel info output_path)/_coverage/_coverage_report.dat"
+bazel coverage --combined_report=lcov  //...
+genhtml --output genhtml bazel-out/_coverage/_coverage_report.dat
 ```
 
 To generate coverage data that SonarCloud can read:
